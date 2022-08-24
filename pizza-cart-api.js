@@ -40,7 +40,7 @@ document.addEventListener('alpine:init', () => {
 
        message: '', 
        pizzas: [],
-       username: '',
+       username: 'Dipuo',
        cartId: '',
        cart: { total:0 },
        removeMessage: '',
@@ -86,6 +86,7 @@ document.addEventListener('alpine:init', () => {
        pay(){
         const parameter ={
           cart_code:this.cartId,
+          amount:this.paymentAmount
         }
         axios.post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/pay', parameter)
         .then(()=>{
